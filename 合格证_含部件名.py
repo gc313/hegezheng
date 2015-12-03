@@ -1,3 +1,4 @@
+#python3 含部件名的合格证
 import xlsxwriter
 
 filename = input('文件名：') + '.xlsx'
@@ -12,6 +13,7 @@ format_cop.set_align('vcenter')
 format_cop.set_top()
 format_cop.set_left()
 format_cop.set_right()
+format_cop.set_font_name('宋体')
 
 format_title = workbook.add_format()
 format_title.set_font_size(16)
@@ -20,24 +22,28 @@ format_title.set_align('center')
 format_title.set_align('vcenter')
 format_title.set_left()
 format_title.set_right()
+format_title.set_font_name('宋体')
 
 format_text = workbook.add_format()
 format_text.set_font_size(10.5)
 format_text.set_align('center')
 format_text.set_align('vcenter')
 format_text.set_left()
+format_text.set_font_name('宋体')
 
 format_text_u = workbook.add_format()
 format_text_u.set_font_size(10.5)
 format_text_u.set_bottom()
 format_text_u.set_align('center')
 format_text_u.set_align('vcenter')
+format_text_u.set_font_name('宋体')
 
 format_b = workbook.add_format()
 format_b.set_font_size(10.5)
 format_b.set_right()
 format_b.set_align('center')
 format_b.set_align('vcenter')
+format_b.set_font_name('宋体')
 
 format_b2 = workbook.add_format()
 format_b2.set_font_size(10.5)
@@ -46,6 +52,7 @@ format_b2.set_left()
 format_b2.set_bottom()
 format_b2.set_align('center')
 format_b2.set_align('vcenter')
+format_b2.set_font_name('宋体')
 #设置格式结束----------------------------
 
 
@@ -126,7 +133,7 @@ for i in range(pici):
 			
 
 			#填写合格证信息
-			worksheet.merge_range(chr(65 + c_0) + str(r_1) + ':' + chr(67 + c_0) + str(r_1),'XXXX公司',format_cop) #A1:C1
+			worksheet.merge_range(chr(65 + c_0) + str(r_1) + ':' + chr(67 + c_0) + str(r_1),'公司名称',format_cop) #A1:C1
 			worksheet.merge_range(chr(65 + c_0) + str(r_2) + ':' + chr(67 + c_0) + str(r_2),'产品合格证',format_title)
 			worksheet.merge_range(chr(67 + c_0) + str(r_3) + ':' + chr(67 + c_0) + str(r_10),' ',format_b)
 			worksheet.merge_range(chr(65 + c_0) + str(r_11) + ':' + chr(67 + c_0) + str(r_11),' ',format_b2)
@@ -162,11 +169,5 @@ for i in range(pici):
 		r_10 += 12
 		r_11 += 12
 
-
-
-
-
-
-
-
 workbook.close()
+
